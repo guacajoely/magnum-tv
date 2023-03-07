@@ -1,7 +1,12 @@
 const database = {
 
+
+
 }
 
+
+
+
 export const getShows = () => {
-  return null
+  return database.shows.map(showObject => ({...showObject}))
 }

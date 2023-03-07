@@ -21,3 +21,13 @@
     * When displaying shows, show the title, genre name, and
         star actor for the show.
 */
+
+import { HTMLcreator } from "./HTMLcreator.js";
+
+const container = document.querySelector("#content");
+
+const render = () => {
+  container.innerHTML = HTMLcreator();
+};
+
+render();
