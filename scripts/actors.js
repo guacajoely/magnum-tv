@@ -46,14 +46,14 @@ document.addEventListener("click",  (clickEvent) => {
             //     }
             // }
 
-            
+
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             //OR USE FIND METHOD
              matchingActor = allActors.find(item => item.id === parseInt(PrimaryKey));
              matchingShow = allShows.find(item => item.id === matchingActor.id);
 
                 
-            //can also just use innerHTML INSTEAD of looping through actor objects for name
+            //can also just use innerHTML INSTEAD of looping through actor objects to get the actor name
             const testActorName = itemClicked.innerHTML
 
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -61,8 +61,6 @@ document.addEventListener("click",  (clickEvent) => {
             // INSERT THE MATCHED ACTOR NAME AND THE MATCHED SHOW NAME INTO ALERT
             window.alert(`${testActorName} stars in ${matchingShow.name}`)
 
-            }
-
         }
-    
+    }
 )
