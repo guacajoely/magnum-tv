@@ -29,30 +29,40 @@ document.addEventListener("click",  (clickEvent) => {
             //WHAT IS THE PRIMARY KEY OF THE CLICKED ACTOR?
             const [,PrimaryKey] = itemClicked.id.split("--")
 
-
-            //GRAB THE WHOLE ACTOR OBJECT TO GET THEIR NAME
             let matchingActor = null
             let matchingShow = null
-            for (const actor of allActors){
-                if (parseInt(PrimaryKey) === actor.id){
-                    matchingActor = actor
 
-                    //WHILE YOU"RE HERE, LOOP THROUGH THE SHOWS ALSO TO FIND THE RELATED SHOW OBJECT SO WE CAN GET ITS NAME
-                    for (const show of allShows){
-                        if (show.actorID === matchingActor.id){
-                            matchingShow = show
-                        }
-                    }
-                }
-            }
+            //GRAB THE WHOLE ACTOR OBJECT TO GET THEIR NAME
+            // for (const actor of allActors){
+            //     if (parseInt(PrimaryKey) === actor.id){
+            //         matchingActor = actor
+            //     }
+            // }
 
+            //WHILE YOU"RE HERE, LOOP THROUGH THE SHOWS ALSO TO FIND THE RELATED SHOW OBJECT SO WE CAN GET ITS NAME
+            // for (const show of allShows){
+            //     if (show.actorID === matchingActor.id){
+            //         matchingShow = show
+            //     }
+            // }
 
+            
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //OR USE FIND METHOD
+             matchingActor = allActors.find(item => item.id === parseInt(PrimaryKey));
+             matchingShow = allShows.find(item => item.id === matchingActor.id);
+
+                
             //can also just use innerHTML INSTEAD of looping through actor objects for name
             const testActorName = itemClicked.innerHTML
-            
+
+            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
             // INSERT THE MATCHED ACTOR NAME AND THE MATCHED SHOW NAME INTO ALERT
             window.alert(`${testActorName} stars in ${matchingShow.name}`)
 
+            }
+
         }
-    }
+    
 )
